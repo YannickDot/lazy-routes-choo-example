@@ -1,0 +1,123 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "wayfarer@^6.1.5",
+        "scope": null,
+        "escapedName": "wayfarer",
+        "name": "wayfarer",
+        "rawSpec": "^6.1.5",
+        "spec": ">=6.1.5 <7.0.0",
+        "type": "range"
+      },
+      "/Users/yannicklevif/Dev/GitHub/pwa-stopwatch/node_modules/sheet-router"
+    ]
+  ],
+  "_from": "wayfarer@>=6.1.5 <7.0.0",
+  "_id": "wayfarer@6.2.2",
+  "_inCache": true,
+  "_location": "/wayfarer",
+  "_nodeVersion": "6.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/wayfarer-6.2.2.tgz_1475668702141_0.8584273643791676"
+  },
+  "_npmUser": {
+    "name": "yoshuawuyts",
+    "email": "i@yoshuawuyts.com"
+  },
+  "_npmVersion": "2.15.11",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "wayfarer@^6.1.5",
+    "scope": null,
+    "escapedName": "wayfarer",
+    "name": "wayfarer",
+    "rawSpec": "^6.1.5",
+    "spec": ">=6.1.5 <7.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/sheet-router"
+  ],
+  "_resolved": "https://registry.npmjs.org/wayfarer/-/wayfarer-6.2.2.tgz",
+  "_shasum": "fb524b733f1ccbe5419150e2e4b8e53f9f34f05d",
+  "_shrinkwrap": null,
+  "_spec": "wayfarer@^6.1.5",
+  "_where": "/Users/yannicklevif/Dev/GitHub/pwa-stopwatch/node_modules/sheet-router",
+  "bugs": {
+    "url": "https://github.com/yoshuawuyts/wayfarer/issues"
+  },
+  "dependencies": {
+    "xtend": "^4.0.1"
+  },
+  "description": "Composable trie based router",
+  "devDependencies": {
+    "istanbul": "^0.2.11",
+    "mocha": "^1.20.1",
+    "noop2": "^2.0.0",
+    "standard": "^4.0.1",
+    "tape": "^3.0.3"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "fb524b733f1ccbe5419150e2e4b8e53f9f34f05d",
+    "tarball": "https://registry.npmjs.org/wayfarer/-/wayfarer-6.2.2.tgz"
+  },
+  "files": [
+    "LICENSE",
+    "index.js",
+    "trie.js",
+    "walk.js",
+    "README.md"
+  ],
+  "gitHead": "9241bd1e3008ab8eaba80d4a79160d94909cc251",
+  "homepage": "https://github.com/yoshuawuyts/wayfarer#readme",
+  "keywords": [
+    "router",
+    "trie",
+    "client",
+    "simple",
+    "minimal",
+    "functional",
+    "idempotent",
+    "on",
+    "event",
+    "emitter",
+    "react",
+    "browserify",
+    "browser"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "yoshuawuyts",
+      "email": "i@yoshuawuyts.com"
+    },
+    {
+      "name": "sethvincent",
+      "email": "sethvincent@gmail.com"
+    },
+    {
+      "name": "hughsk",
+      "email": "hughskennedy@gmail.com"
+    },
+    {
+      "name": "timoxley",
+      "email": "secoif@gmail.com"
+    }
+  ],
+  "name": "wayfarer",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoshuawuyts/wayfarer.git"
+  },
+  "scripts": {
+    "test": "standard && NODE_ENV=test tape test/*",
+    "test-cov": "NODE_ENV=test istanbul cover test/*"
+  },
+  "version": "6.2.2"
+}

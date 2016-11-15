@@ -1,0 +1,104 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "sheet-router@^3.1.0",
+        "scope": null,
+        "escapedName": "sheet-router",
+        "name": "sheet-router",
+        "rawSpec": "^3.1.0",
+        "spec": ">=3.1.0 <4.0.0",
+        "type": "range"
+      },
+      "/Users/yannicklevif/Dev/GitHub/pwa-stopwatch/node_modules/choo"
+    ]
+  ],
+  "_from": "sheet-router@>=3.1.0 <4.0.0",
+  "_id": "sheet-router@3.1.1",
+  "_inCache": true,
+  "_location": "/sheet-router",
+  "_nodeVersion": "5.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/sheet-router-3.1.1.tgz_1467423918229_0.5924242306500673"
+  },
+  "_npmUser": {
+    "name": "yoshuawuyts",
+    "email": "i@yoshuawuyts.com"
+  },
+  "_npmVersion": "2.15.1",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "sheet-router@^3.1.0",
+    "scope": null,
+    "escapedName": "sheet-router",
+    "name": "sheet-router",
+    "rawSpec": "^3.1.0",
+    "spec": ">=3.1.0 <4.0.0",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "/choo"
+  ],
+  "_resolved": "https://registry.npmjs.org/sheet-router/-/sheet-router-3.1.1.tgz",
+  "_shasum": "82b240a1ea910643de6dc136e01cee38cde3b4b0",
+  "_shrinkwrap": null,
+  "_spec": "sheet-router@^3.1.0",
+  "_where": "/Users/yannicklevif/Dev/GitHub/pwa-stopwatch/node_modules/choo",
+  "bugs": {
+    "url": "https://github.com/yoshuawuyts/sheet-router/issues"
+  },
+  "dependencies": {
+    "global": "^4.3.0",
+    "pathname-match": "^1.1.2",
+    "sliced": "^1.0.1",
+    "wayfarer": "^6.1.5"
+  },
+  "description": "Fast, modular client router",
+  "devDependencies": {
+    "dependency-check": "^2.5.1",
+    "istanbul": "^0.4.1",
+    "noop2": "^2.0.0",
+    "standard": "^5.4.1",
+    "tape": "^4.4.0",
+    "virtual-dom": "^2.1.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "82b240a1ea910643de6dc136e01cee38cde3b4b0",
+    "tarball": "https://registry.npmjs.org/sheet-router/-/sheet-router-3.1.1.tgz"
+  },
+  "gitHead": "1087c836d204be47723d5a2ce54e35eb7ec37560",
+  "homepage": "https://github.com/yoshuawuyts/sheet-router#readme",
+  "keywords": [
+    "client",
+    "router",
+    "modular",
+    "wayfarer",
+    "history",
+    "pushstate",
+    "single-page",
+    "spa",
+    "progressive"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "yoshuawuyts",
+      "email": "i@yoshuawuyts.com"
+    }
+  ],
+  "name": "sheet-router",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoshuawuyts/sheet-router.git"
+  },
+  "scripts": {
+    "test": "standard && NODE_ENV=test node test",
+    "test:cov": "standard && NODE_ENV=test istanbul cover test.js"
+  },
+  "version": "3.1.1"
+}

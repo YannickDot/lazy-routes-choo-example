@@ -1,0 +1,165 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "choo",
+        "scope": null,
+        "escapedName": "choo",
+        "name": "choo",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Users/yannicklevif/Dev/GitHub/pwa-stopwatch"
+    ]
+  ],
+  "_from": "choo@latest",
+  "_id": "choo@3.3.0",
+  "_inCache": true,
+  "_location": "/choo",
+  "_nodeVersion": "6.4.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/choo-3.3.0.tgz_1473267662164_0.059575144900009036"
+  },
+  "_npmUser": {
+    "name": "yoshuawuyts",
+    "email": "i@yoshuawuyts.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "choo",
+    "scope": null,
+    "escapedName": "choo",
+    "name": "choo",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/choo/-/choo-3.3.0.tgz",
+  "_shasum": "5cb5b2d4bcb243e4090b7f53ef2e4148e908d9f1",
+  "_shrinkwrap": null,
+  "_spec": "choo",
+  "_where": "/Users/yannicklevif/Dev/GitHub/pwa-stopwatch",
+  "bugs": {
+    "url": "https://github.com/yoshuawuyts/choo/issues"
+  },
+  "dependencies": {
+    "barracks": "^8.3.1",
+    "document-ready": "~1.0.2",
+    "global": "^4.3.0",
+    "hash-match": "^1.0.2",
+    "nanoraf": "^2.1.1",
+    "sheet-router": "^3.1.0",
+    "xhr": "^2.2.0",
+    "xtend": "^4.0.1",
+    "yo-yo": "^1.2.2"
+  },
+  "description": "A 5kb framework for creating sturdy frontend applications",
+  "devDependencies": {
+    "append-child": "~1.0.0",
+    "bankai": "^3.1.0",
+    "browserify": "^13.0.1",
+    "browserify-istanbul": "^2.0.0",
+    "bundle-collapser": "^1.2.1",
+    "dependency-check": "^2.5.1",
+    "disc": "^1.3.2",
+    "envify": "^3.4.1",
+    "es2020": "^1.0.1",
+    "geval": "~2.1.1",
+    "gzip-size-cli": "^1.0.0",
+    "insert-css": "^1.0.0",
+    "istanbul": "^0.4.4",
+    "min-document": "~2.18.0",
+    "pretty-bytes-cli": "^2.0.0",
+    "proxyquire": "~1.7.10",
+    "proxyquire-universal": "~1.0.8",
+    "proxyquireify": "~3.2.0",
+    "server-router": "^3.0.0",
+    "sheetify": "^5.1.0",
+    "standard": "^8.0.0",
+    "tachyons": "^4.0.0-beta.19",
+    "tape": "^4.5.1",
+    "tape-istanbul": "~1.0.2",
+    "tape-run": "~2.1.4",
+    "uglifyify": "^3.0.2",
+    "uglifyjs": "^2.4.10",
+    "unassertify": "^2.0.3",
+    "yo-yoify": "^3.1.0",
+    "zuul": "github:toddself/zuul"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "5cb5b2d4bcb243e4090b7f53ef2e4148e908d9f1",
+    "tarball": "https://registry.npmjs.org/choo/-/choo-3.3.0.tgz"
+  },
+  "files": [
+    "index.js",
+    "http.js",
+    "html.js",
+    "dist/"
+  ],
+  "gitHead": "f32ef741de35391930011087431740754b47f268",
+  "homepage": "https://github.com/yoshuawuyts/choo#readme",
+  "keywords": [
+    "client",
+    "frontend",
+    "framework",
+    "minimal",
+    "composable",
+    "tiny"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "ahdinosaur",
+      "email": "michael.williams@enspiral.com"
+    },
+    {
+      "name": "maxogden",
+      "email": "max@maxogden.com"
+    },
+    {
+      "name": "sethvincent",
+      "email": "sethvincent@gmail.com"
+    },
+    {
+      "name": "toddself",
+      "email": "todd@selfassembled.org"
+    },
+    {
+      "name": "yoshuawuyts",
+      "email": "i@yoshuawuyts.com"
+    }
+  ],
+  "name": "choo",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoshuawuyts/choo.git"
+  },
+  "scripts": {
+    "build:dev": "./scripts/build dev",
+    "build:min": "./scripts/build min",
+    "deps": "./scripts/test deps",
+    "instrument:discify": "./scripts/instrument discify",
+    "instrument:gzip": "./scripts/instrument gzip",
+    "instrument:minified": "./scripts/instrument minified",
+    "prepublish": "npm run build:dev && npm run build:min",
+    "preversion": "if [ ! -z $SKIP_TEST ]; then npm run test:browser; fi",
+    "test": "npm run test:electron",
+    "test:browser": "./scripts/test browser",
+    "test:browser-local": "./scripts/test browser-local",
+    "test:cov": "./scripts/test cov",
+    "test:electron": "./scripts/test electron",
+    "test:server": "./scripts/test server"
+  },
+  "version": "3.3.0"
+}
