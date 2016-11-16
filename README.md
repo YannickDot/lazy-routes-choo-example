@@ -21,24 +21,26 @@ Then go on `http://localhost:8080/lazy` to see a lazy-loaded route!
 ![demo](demo.png)
 
 
-## How does it work ?
-
-I've tweaked the wayfarer, sheet-router, and choo libraries to handle lazy routes.
-
 ```js
 // Do not forget to wrap the view fn!
-const lazyLoadedView = (wrap) => System.import('./dependency.js').then(module => wrap(module))
+const lazyLoadedView = (wrap) => System.import('./dependency.js').then(module => wrap(module.view))
 
-app.router((route, lazyRoute) => [
+app.router((route) => [
   route('/', view),
-  lazyRoute('/lazy', lazyLoadedView)  //<-- Here is a lazy route
+  route('/lazy', markAsLazy(lazyLoadedView)) //<-- Here is a lazy route
 ])
 
-// The promise API is a necessary tradeoff ... :( It can be better I think.
+// The promise API is a necessary tradeoff ...
 app.start()
 .then(domTree => document.querySelector("#choo").appendChild(domTree))
 ```
 
-I've uploaded their local forks in the `forked-lib` folder and webpack aliases each lib with the content of this folder.
+
+## How does it work ?
+
+I've tweaked the wayfarer, and choo libraries to handle lazy routes.
+
+I've uploaded their local forks in the `forked-lib` folder and webpack aliases each lib to the content of this folder.
+
 
 Have a look at [that issue](https://github.com/yoshuawuyts/sheet-router/issues/62) for more details. 😉
