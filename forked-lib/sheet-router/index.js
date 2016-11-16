@@ -6,9 +6,8 @@ module.exports = sheetRouter
 
 // Fast, modular client router
 // fn(str, any[..], fn?) -> fn(str, any[..])
-function sheetRouter (dft, createTree, createRoute, createLazyRoute) {
+function sheetRouter (dft, createTree, createRoute) {
   createRoute = (createRoute ? createRoute(_createRoute) : _createRoute)
-  createLazyRoute = (createLazyRoute ? createLazyRoute(_createLazyRoute) : _createLazyRoute)
 
   if (!createTree) {
     createTree = dft
@@ -18,10 +17,9 @@ function sheetRouter (dft, createTree, createRoute, createLazyRoute) {
   assert.equal(typeof dft, 'string', 'sheet-router: dft must be a string')
   assert.equal(typeof createTree, 'function', 'sheet-router: createTree must be a function')
   assert.equal(typeof createRoute, 'function', 'sheet-router: createRoute must be a function')
-  assert.equal(typeof createLazyRoute, 'function', 'sheet-router: createLazyRoute must be a function')
 
   const router = wayfarer(dft)
-  const tree = createTree(createRoute, createLazyRoute)
+  const tree = createTree(createRoute)
 
   // register tree in router
   ;(function walk (tree, route) {
@@ -47,11 +45,7 @@ function sheetRouter (dft, createTree, createRoute, createLazyRoute) {
         ? route.concat(tree[0]).join('/')
         : route.length ? route.join('/') : tree[0]
 
-        if(tree[3]) {
-          router.on(nwRoute, tree[2], "lazy")
-        } else {
-          router.on(nwRoute, tree[2])
-        }
+        router.on(nwRoute, tree[2])
 
     }
   })(tree, [])
@@ -76,18 +70,4 @@ function _createRoute (route, inline, child) {
 
   route = route.replace(/^\//, '')
   return [ route, inline, child ]
-}
-
-// register lazy route
-function _createLazyRoute (route, inline, child) {
-  const lazy = true
-  if (!child) {
-    child = inline
-    inline = null
-  }
-  assert.equal(typeof route, 'string', 'route must be a string')
-  assert.ok(child, 'child exists')
-
-  route = route.replace(/^\//, '')
-  return [ route, inline, child, lazy ]
 }

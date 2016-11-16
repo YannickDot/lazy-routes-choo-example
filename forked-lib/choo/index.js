@@ -136,14 +136,20 @@ function choo (opts) {
   // (str?, obj, fn?) -> null
   function createRouter (defaultRoute, routes, createSend) {
     var prev = { params: {} }
-    return sheetRouter(defaultRoute, routes, createRoute, createLazyRoute)
+    return sheetRouter(defaultRoute, routes, createRoute)
 
     function createRoute (routeFn) {
       return function (route, inline, child) {
-        if (typeof inline === 'function') {
-          inline = wrap(inline, route)
+        var wrapped = inline
+        if (typeof inline === 'function' && inline.lazy) {
+          const wrap_lazy = (_route) => (_child) => wrap(_child, _route)
+          wrapped = () => inline(wrap_lazy(route))
+          wrapped.lazy = true
         }
-        return routeFn(route, inline, child)
+        else if (typeof inline === 'function') {
+          wrapped = wrap(inline, route)
+        }
+        return routeFn(route, wrapped, child)
       }
 
       function wrap (child, route) {
@@ -156,29 +162,6 @@ function choo (opts) {
         }
       }
     }
-
-    function createLazyRoute (routeFn) {
-      return function (route, inline, child) {
-        const wrap_curry = (_route) => (_child) => wrap(_child, _route)
-        if (typeof inline === 'function') {
-          var inliner = () => inline(wrap_curry(route))
-          // inline = wrap(inline, route)
-        }
-        return routeFn(route, inliner, child)
-      }
-
-      function wrap (child, route) {
-        const send = createSend('view: ' + route, true)
-        return function chooWrap (params, state, resolveData) {
-          const nwPrev = prev
-          const nwState = prev = xtend(state, { params: params, resolveData: resolveData })
-          if (opts.freeze !== false) Object.freeze(nwState)
-          return child(nwState, nwPrev, send)
-        }
-      }
-    }
-
-
   }
 }
 

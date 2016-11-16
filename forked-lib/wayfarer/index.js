@@ -31,7 +31,6 @@ function Wayfarer (dft) {
     } else {
       const node = _trie.create(route)
       node.cb = cb
-      if(type === "lazy") node.lazy = cb
     }
 
     return emit
@@ -47,10 +46,10 @@ function Wayfarer (dft) {
     }
 
     const node = _trie.match(route)
-    
-    if (node && node.lazy) {
+
+    if (node && node.cb && node.cb.lazy) {
       args[0] = node.params
-      return node.lazy().then(view => view.apply(null, args))
+      return node.cb().then(view => view.apply(null, args))
     }
 
     if (node && node.cb) {

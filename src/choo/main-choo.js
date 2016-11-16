@@ -36,11 +36,18 @@ const view = (state, prev, send) => {
 
 const doSomethingBeforeRendering = () => Promise.resolve("doSomethingBeforeRendering")
 
-const lazyLoadedView = (wrap) => System.import('./dependency.js').then(module => wrap(module.view))
+function lazy (fn) {
+  fn.lazy = true
+  return fn
+}
 
-app.router((route, lazyRoute) => [
+const lazyLoadedView = lazy(
+  (wrap) => System.import('./dependency.js').then(module => wrap(module.view))
+)
+
+app.router((route) => [
   route('/', view),
-  lazyRoute('/lazy', lazyLoadedView)
+  route('/lazy', lazyLoadedView)
 ])
 
 app.start()
