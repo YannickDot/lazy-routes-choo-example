@@ -1,6 +1,6 @@
 # lazy-routes-choo-example
 
-A choo 🚂🚋🚋 project tweaked to handle lazy routes (code splitted routes) with webpack
+A choo 🚂🚋🚋🚋 project tweaked to handle lazy routes (code splitted routes) with webpack
 
 
 ## Install
@@ -20,6 +20,7 @@ Then go on `http://localhost:8080/lazy` to see a lazy-loaded route!
 
 ![demo](demo.png)
 
+Here is the code behind the demo :
 
 ```js
 // Do not forget to wrap the view fn!
