@@ -73,13 +73,17 @@ function choo (opts) {
     if (!selector) {
       const tree = _router(state.location.pathname, state)
       if(isPromise(tree)) {
-        return tree.then(dom => {
-          _rootNode = dom
-          return dom
-        })
+        return (cb) => {
+          tree.then(dom => {
+            _rootNode = dom
+            cb(dom)
+          })
+        }
       } else {
-        _rootNode = tree
-        return Promise.resolve(tree)
+        return (cb) => {
+          _rootNode = tree
+          cb(tree)
+        }
       }
 
     } else {

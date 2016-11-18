@@ -48,5 +48,5 @@ app.router((route) => [
   route('/lazy', markAsLazy(lazyLoadedView))
 ])
 
-app.start()
-.then(domTree => document.querySelector("#choo").appendChild(domTree))
+const render = app.start()
+render(domTree => document.querySelector("#choo").appendChild(domTree))
